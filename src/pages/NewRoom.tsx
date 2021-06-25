@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+
 import illustration from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 
@@ -8,6 +9,8 @@ import {Button} from '../components/Button'
 
 
 export function NewRoom(){
+
+
     return(
         <div id="page-auth">
             <aside>
