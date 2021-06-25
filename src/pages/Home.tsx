@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom'
-import { auth, firebase } from '../services/firebase'
+import { useContext } from 'react'
+import { AuthContext } from '../App'
 
 import illustration from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
@@ -9,16 +10,17 @@ import '../styles/auth.scss'
 import {Button} from '../components/Button'
 
 
-
-
 export function Home(){
     const history = useHistory();
+    const { user, signInWithGoogle } = useContext(AuthContext)
  
     function handleCreatRoom() {
+        if(!user) {
+            signInWithGoogle()
+        }
             history.push('/room/new')
     }
 
-   
     return(
         <div id="page-auth">
             <aside>
